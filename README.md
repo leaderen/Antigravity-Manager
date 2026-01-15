@@ -205,7 +205,9 @@ print(response.choices[0].message.content)
 ## 📝 开发者与社区
 
 *   **版本演进 (Changelog)**:
-    *   **v3.3.33 (2026-01-15)**:
+    *   **v3.3.33 (2026-01-16)**:
+        - **Claude 提示词过滤修复 (Fix Issue #712)**:
+            - **自定义指令保留**: 优化了对 Claude Code 冗余系统提示词的过滤逻辑。现在能够识别并精准保留用户自定义的指令（如来自 `AGENTS.md` 的全局提示词），通过搜索 `Instructions from:` 标记确保个性化配置不因长过滤而丢失。
         - **Codex 兼容性与模型映射修复 (Fix Issue #697)**:
             - **Instructions 参数支持**: 修复了对 `instructions` 参数的处理逻辑，确保其作为系统指令（System Instructions）正确注入，提升与 Codex 等工具的兼容性。
             - **自动 Responses 格式检测**: 在 OpenAI 处理器中新增智能检测逻辑，自动识别并转换 `instructions` 或 `input` 字段触发的 Responses 模式，无需客户端手动切换。

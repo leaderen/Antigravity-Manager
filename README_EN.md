@@ -187,7 +187,9 @@ print(response.choices[0].message.content)
 ## 📝 Developer & Community
 
 *   **Changelog**:
-    *   **v3.3.33 (2026-01-15)**:
+    *   **v3.3.33 (2026-01-16)**:
+        - **Claude Prompt Filtering Fix (Fix Issue #712)**:
+            - **Custom Instructions Preservation**: Optimized the filtering logic for redundant Claude Code system prompts. It now identifies and accurately preserves user-defined instructions (e.g., global prompts from `AGENTS.md`) by searching for the `Instructions from:` marker, ensuring personalized configurations are not lost during filtering.
         - **Codex Compatibility & Model Mapping Fix (Fix Issue #697)**:
             - **Instructions Parameter Support**: Fixed the handling of the `instructions` parameter, ensuring it is correctly injected as System Instructions for better compatibility with tools like Codex.
             - **Automatic Responses Format Detection**: Added intelligent detection in the OpenAI handler to automatically recognize and transform `instructions` or `input` fields into Responses mode.
